@@ -39,8 +39,8 @@
                     <span slot="title">店铺管理</span>
                   </template>
                   <el-menu-item-group>
-                    <el-menu-item index="3-1">店铺列表</el-menu-item>
-                    <el-menu-item index="3-2">店铺信息</el-menu-item>
+                    <el-menu-item index="/shopList">店铺列表</el-menu-item>
+                    <el-menu-item index="/shopInfo">店铺信息</el-menu-item>
                   </el-menu-item-group>
                 </el-submenu>
                 <el-menu-item index="/kit">

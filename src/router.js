@@ -5,6 +5,8 @@ import Program_overview from './components/details/Program_overview.vue';
 import Programme_detail from './components/details/Programme_detail.vue';
 import Global_monitoring from './components/monitoring/global_monitoring'
 import Kit from './components/kit/kit.vue';
+import ShopList from './components/shopInfomation/shopList.vue';
+import ShopInfo from './components/shopInfomation/shopInfo.vue';
 import Originality from './components/originality/originality.vue';
 import Category from './components/category/category.vue';
 import Account from './components/finance/account.vue';
@@ -23,7 +25,9 @@ const routes = [
         children:[
             { path: '/program_overview', component: Program_overview },
             { path: '/programme_detail', component: Programme_detail},
-            {path:'/global_monitoring',component:Global_monitoring},
+            { path:'/global_monitoring',component:Global_monitoring},
+            { path:'/shopList',component:ShopList},
+            { path:'/shopInfo',component:ShopInfo},
             { path: '/kit', component: Kit},
             { path: '/originality', component: Originality},
             { path: '/category', component: Category },
