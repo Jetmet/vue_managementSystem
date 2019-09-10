@@ -31,6 +31,7 @@
                 </div>
                 <el-table
                 :data='item.tableData'
+                @row-click="intoItem"
                 style="width: 100%;"
                 :header-cell-style="{background:'#eef1f6'}"
                 >
@@ -67,37 +68,63 @@ export default {
             inputText:'',
             value:'',
             titleData:[
-               { title:'全部店铺',
+               { 
+                title:'全部店铺',
                 tableHead:[
-                {label:'店铺名'},
-                {label:'接入时间'},
-                {label:'每日预算'},
-                {label:'消耗'},
-                {label:'展现量'},
-                {label:'点击量'},
-                {label:'CPC'},
-                {label:'CPM'},
-                {label:'CTR'},
-                {label:'ROI'},
-                {label:'余额'},
-                {label:'状态'},]
+                    {label:'店铺名',prop:'shopName'},
+                    {label:'接入时间',prop:'date'},
+                    {label:'每日预算',prop:'bubgetDay'},
+                    {label:'消耗',prop:'consume'},
+                    {label:'展现量',prop:'impressions'},
+                    {label:'点击量',prop:'hits'},
+                    {label:'CPC',prop:'cpc'},
+                    {label:'CPM',prop:'cpm'},
+                    {label:'CTR',prop:'ctr'},
+                    {label:'ROI',prop:'roi'},
+                    {label:'余额',prop:'balance'},
+                    {label:'状态',prop:'status'},
+                ],
+                tableData:[
+                {
+                    shopName:'楠楠家具专营店',
+                    date:'2018/5/27',
+                    bubgetDay:'600/300',
+                    consume:'123.33/13.32',
+                    impressions:'42334/32414',
+                    hits:'233/543',
+                    cpc:'5.92/3.66',
+                    cpm:'32/29',
+                    ctr:'1.23%/2.24%',
+                    roi:'1.88/2.31',
+                    balance:'1073.73',
+                    status:'正常'
+                }
+                ]
                 },
-                { title:'我的店铺',
+                { 
+                title:'我的店铺',
                 tableHead:[
-                {label:'店铺名'},
-                {label:'接入时间'},
-                {label:'每日预算'},
-                {label:'消耗'},
-                {label:'展现量'},
-                {label:'点击量'},
-                {label:'CPC'},
-                {label:'CPM'},
-                {label:'CTR'},
-                {label:'ROI'},
-                {label:'余额'},
-                {label:'状态'},]
+                    {label:'店铺名',prop:'shopName'},
+                    {label:'接入时间',prop:'date'},
+                    {label:'每日预算',prop:'bubgetDay'},
+                    {label:'消耗',prop:'consume'},
+                    {label:'展现量',prop:'impressions'},
+                    {label:'点击量',prop:'hits'},
+                    {label:'CPC',prop:'cpc'},
+                    {label:'CPM',prop:'cpm'},
+                    {label:'CTR',prop:'ctr'},
+                    {label:'ROI',prop:'roi'},
+                    {label:'余额',prop:'balance'},
+                    {label:'状态',prop:'status'},
+                    ]
                 },
-            ]
+            ],
+            
+        }
+    },
+    methods:{
+        intoItem(){
+            console.log('打印');
         }
     }
 }
@@ -107,19 +134,20 @@ export default {
     display:flex;
     justify-content:space-between;
     margin-bottom: 2%;
+    margin-top: 2%;
     .inputText{
         width:40%;
         display:flex;
     }
 }
 /deep/.el-tabs--border-card {
-   border-top:0;
-   box-shadow: 
-   0px 0px 0px  grey, 
-    0px 0px 0px grey, 
-    0px 6px 10px grey, 
-    0px 2px 0px grey;
+   border:0px;
+//    box-shadow:0px 0px 0px;
    .el-tabs__header{
      background-color: #FFFFFF;}
+    .el-tabs__content{
+       padding:0px;
    }
+   }
+   
 </style>
